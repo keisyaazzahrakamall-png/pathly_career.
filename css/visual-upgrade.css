@@ -1,0 +1,968 @@
+:root {
+    --blue: #3b82f6;
+    --blue-soft: #eff6ff;
+    --violet: #7c3aed;
+    --violet-soft: #f5f3ff;
+
+    --off-white: #eaf2f4;
+    --white: #f5fbfb;
+    --border: #cbdde0;
+
+    --gradient-brand:
+        linear-gradient(135deg, #152238, #1a4155 55%, #23736f);
+
+    --gradient-accent:
+        linear-gradient(135deg, #2d8c88, #3b82f6);
+
+    --surface-mix:
+        linear-gradient(
+            145deg,
+            rgba(232, 244, 243, 0.96),
+            rgba(235, 241, 248, 0.94)
+        );
+
+    --shadow-glow:
+        0 24px 70px rgba(35, 84, 110, 0.14);
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(45, 140, 136, 0.18),
+            transparent 30rem
+        ),
+        radial-gradient(
+            circle at 92% 10%,
+            rgba(59, 130, 246, 0.14),
+            transparent 32rem
+        ),
+        linear-gradient(
+            180deg,
+            #e3eeee,
+            #e8eff4 42%,
+            #e1ecec
+        ) !important;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.26;
+    background-image:
+        linear-gradient(
+            rgba(21, 34, 56, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(21, 34, 56, 0.035) 1px,
+            transparent 1px
+        );
+    background-size: 44px 44px;
+    mask-image: linear-gradient(to bottom, black, transparent 75%);
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(45, 140, 136, 0.16) !important;
+    background: rgba(226, 239, 239, 0.88) !important;
+    box-shadow: 0 7px 30px rgba(15, 23, 42, 0.04);
+    backdrop-filter: blur(18px);
+}
+
+@media (min-width: 901px) {
+    .navbar-content {
+        width: min(calc(100% - 96px), 1680px);
+    }
+}
+
+.logo {
+    letter-spacing: -1px;
+}
+
+.logo span {
+    display: inline-block;
+    background: var(--gradient-accent);
+    background-clip: text;
+    color: transparent !important;
+}
+
+.section-label,
+.block-label,
+.small-label {
+    width: fit-content;
+    padding: 5px 9px;
+    border: 1px solid rgba(45, 140, 136, 0.18);
+    border-radius: 999px;
+    background: rgba(211, 235, 232, 0.9) !important;
+    letter-spacing: 1.45px;
+}
+
+.btn-primary,
+.btn-nav {
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    background: var(--gradient-accent) !important;
+    box-shadow: 0 10px 28px rgba(45, 140, 136, 0.24);
+}
+
+.btn-primary::after,
+.btn-nav::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            110deg,
+            transparent 25%,
+            rgba(255, 255, 255, 0.28),
+            transparent 72%
+        );
+    transform: translateX(-120%);
+    transition: transform 0.55s ease;
+}
+
+.btn-primary:hover::after,
+.btn-nav:hover::after {
+    transform: translateX(120%);
+}
+
+.btn-secondary {
+    border-color: rgba(45, 140, 136, 0.22) !important;
+    background: rgba(229, 241, 241, 0.96) !important;
+    box-shadow: 0 7px 22px rgba(15, 23, 42, 0.04);
+}
+
+.value-card,
+.career-card,
+.profile-form,
+.stage-card-content,
+.career-option-content,
+.assessment-card,
+.alignment-card,
+.result-stat,
+.priority-card,
+.skill-result-row,
+.indicator-card,
+.adaptability-section,
+.dimension-card,
+.roadmap-stat,
+.roadmap-track,
+.evidence-booster,
+.summary-card,
+.path-progress-card,
+.dashboard-priority,
+.dashboard-skill {
+    border-color: rgba(45, 140, 136, 0.18) !important;
+    background: var(--surface-mix) !important;
+    box-shadow: 0 14px 42px rgba(15, 23, 42, 0.06);
+}
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 92px 0 105px;
+    background:
+        radial-gradient(
+            circle at 78% 22%,
+            rgba(59, 130, 246, 0.2),
+            transparent 24rem
+        ),
+        radial-gradient(
+            circle at 18% 72%,
+            rgba(45, 140, 136, 0.23),
+            transparent 27rem
+        ),
+        linear-gradient(
+            135deg,
+            #dfeeed,
+            #e5edf5 58%,
+            #dceceb
+        ) !important;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 12px;
+    border: 1px solid rgba(45, 140, 136, 0.16);
+    border-radius: 999px;
+    background: rgba(229, 242, 241, 0.88) !important;
+}
+
+.hero-label::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 0 5px rgba(45, 140, 136, 0.1);
+}
+
+.hero h1 {
+    letter-spacing: -2.4px;
+}
+
+.hero h1 span {
+    background:
+        linear-gradient(
+            110deg,
+            var(--teal-dark),
+            var(--blue),
+            var(--violet)
+        );
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    font-size: 17px;
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-note::before {
+    content: "✓";
+    display: grid;
+    place-items: center;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--mint);
+    color: var(--teal-dark);
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.hero-visual {
+    position: relative;
+    perspective: 1100px;
+}
+
+.hero-visual::before {
+    content: "SAMPLE CAREER MAP";
+    position: absolute;
+    top: -16px;
+    right: 20px;
+    bottom: auto;
+    left: auto;
+    z-index: 5;
+    width: auto;
+    height: auto;
+    padding: 8px 11px;
+    border-radius: 999px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    transform: none;
+    box-shadow: 0 10px 28px rgba(21, 34, 56, 0.22);
+}
+
+.career-dashboard {
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(45, 140, 136, 0.2) !important;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(229, 242, 241, 0.98),
+            rgba(231, 238, 248, 0.96)
+        ) !important;
+    box-shadow: 0 34px 75px rgba(22, 51, 70, 0.16) !important;
+    transform: rotateY(-3deg) rotateX(1.5deg);
+}
+
+.career-icon,
+.skill-number,
+.priority-rank,
+.priority-index,
+.step-number {
+    background: var(--gradient-accent) !important;
+    color: var(--white) !important;
+    box-shadow: 0 9px 22px rgba(45, 140, 136, 0.2);
+}
+
+.progress-value {
+    background: var(--gradient-accent) !important;
+}
+
+.skill-item {
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+}
+
+.skill-item:hover {
+    transform: translateX(4px);
+    border-color: rgba(45, 140, 136, 0.12);
+    background: rgba(211, 233, 231, 0.86) !important;
+}
+
+.next-priority {
+    position: relative;
+    overflow: hidden;
+}
+
+.value-section,
+.career-section {
+    position: relative;
+    background: transparent !important;
+}
+
+.value-section::before,
+.career-section::before {
+    content: "";
+    position: absolute;
+    inset: 28px 3%;
+    z-index: -1;
+    border-radius: 40px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(45, 140, 136, 0.13),
+            rgba(59, 130, 246, 0.11),
+            rgba(124, 58, 237, 0.07)
+        ) !important;
+}
+
+.value-card,
+.career-card {
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+}
+
+.value-card::before,
+.career-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: var(--gradient-accent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.value-card:hover::before,
+.career-card:hover::before {
+    opacity: 1;
+}
+
+.value-number {
+    color: var(--teal-dark) !important;
+}
+
+.how-section {
+    position: relative;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(220, 236, 235, 0.82),
+            rgba(229, 237, 245, 0.9)
+        ) !important;
+}
+
+.step-line {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(45, 140, 136, 0.35),
+            rgba(59, 130, 246, 0.08)
+        ) !important;
+}
+
+.career-arrow {
+    border-radius: 50% !important;
+    background: var(--mint) !important;
+    color: var(--teal-dark) !important;
+}
+
+.career-card:hover .career-arrow {
+    background: var(--gradient-accent) !important;
+    color: var(--white) !important;
+}
+
+.skill-tags span {
+    border: 1px solid rgba(45, 140, 136, 0.1);
+}
+
+.onboarding-main,
+.career-stage-main,
+.explorer-main,
+.assessment-main,
+.results-main,
+.readiness-main,
+.roadmap-main,
+.my-path-main {
+    position: relative;
+    background:
+        radial-gradient(
+            circle at 88% 9%,
+            rgba(59, 130, 246, 0.09),
+            transparent 28rem
+        ),
+        radial-gradient(
+            circle at 7% 28%,
+            rgba(45, 140, 136, 0.1),
+            transparent 25rem
+        ) !important;
+}
+
+.results-heading,
+.readiness-heading,
+.roadmap-header,
+.my-path-header,
+.assessment-top,
+.mode-heading,
+.stage-heading,
+.onboarding-heading {
+    position: relative;
+    padding: 18px 20px;
+    border: 1px solid rgba(45, 140, 136, 0.1);
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(217, 235, 233, 0.72),
+            rgba(224, 232, 244, 0.72)
+        );
+}
+
+.onboarding-heading h1,
+.stage-heading h1,
+.mode-heading h1,
+.assessment-top h1,
+.results-heading h1,
+.readiness-heading h1,
+.roadmap-heading h1,
+.my-path-header h1 {
+    letter-spacing: -2px;
+}
+
+.onboarding-progress-track,
+.question-progress-track,
+.alignment-bar,
+.path-progress-track {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(45, 140, 136, 0.11),
+            rgba(59, 130, 246, 0.09)
+        ) !important;
+}
+
+.onboarding-progress-value,
+.question-progress-value,
+.alignment-bar-value,
+.path-progress-value {
+    background: var(--gradient-accent) !important;
+    box-shadow: 0 0 16px rgba(45, 140, 136, 0.22);
+}
+
+.profile-form,
+.assessment-card,
+.adaptability-section,
+.path-progress-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-form::before,
+.assessment-card::before,
+.adaptability-section::before,
+.path-progress-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: var(--gradient-accent);
+}
+
+.form-group input,
+.form-group select,
+.choice-content,
+.checkbox-card,
+.level-card-content,
+.evidence-card,
+.reflection-option span,
+.roadmap-step,
+.dashboard-task {
+    border-color: rgba(45, 140, 136, 0.15) !important;
+    background: rgba(225, 238, 240, 0.86) !important;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--teal) !important;
+    box-shadow: 0 0 0 4px rgba(45, 140, 136, 0.08);
+}
+
+.choice-card input:checked + .choice-content,
+.checkbox-card:has(input:checked),
+.stage-card input:checked + .stage-card-content,
+.career-option input:checked + .career-option-content,
+.level-card input:checked + .level-card-content,
+.evidence-card:has(input:checked),
+.reflection-option input:checked + span {
+    border-color: rgba(45, 140, 136, 0.55) !important;
+    background:
+        linear-gradient(
+            135deg,
+            #d4ece8,
+            #dce8f7
+        ) !important;
+    box-shadow: 0 10px 28px rgba(45, 140, 136, 0.08);
+}
+
+.stage-grid {
+    gap: 22px;
+}
+
+.stage-card-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.stage-card-content::after {
+    content: "";
+    position: absolute;
+    top: -56px;
+    right: -48px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(45, 140, 136, 0.06);
+}
+
+.stage-card:nth-child(2) .stage-card-content::after {
+    background: rgba(59, 130, 246, 0.07);
+}
+
+.stage-card:nth-child(3) .stage-card-content::after {
+    background: rgba(124, 58, 237, 0.06);
+}
+
+.stage-icon,
+.option-symbol,
+.indicator-number {
+    background:
+        linear-gradient(
+            135deg,
+            var(--mint),
+            var(--blue-soft)
+        ) !important;
+    box-shadow: inset 0 0 0 1px rgba(45, 140, 136, 0.1);
+}
+
+.stage-card input:checked + .stage-card-content .stage-icon {
+    background: var(--gradient-accent) !important;
+}
+
+.mode-header {
+    position: relative;
+    overflow: hidden;
+    padding: 22px 24px !important;
+    border: 1px solid rgba(45, 140, 136, 0.13);
+    border-radius: 18px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(213, 235, 232, 0.94),
+            rgba(221, 232, 246, 0.94)
+        ) !important;
+}
+
+.career-option-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.career-option-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--gradient-accent);
+    transition: height 0.25s ease;
+}
+
+.career-option:hover .career-option-content::before,
+.career-option input:checked + .career-option-content::before {
+    height: 100%;
+}
+
+.option-skills span {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(234, 247, 245, 0.9),
+            rgba(239, 246, 255, 0.9)
+        ) !important;
+}
+
+.career-target-box,
+.results-target,
+.readiness-target,
+.roadmap-target,
+.dashboard-target,
+.next-action-card,
+.dashboard-next-action,
+.next-priority {
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-brand) !important;
+    box-shadow: 0 12px 30px rgba(21, 34, 56, 0.18);
+}
+
+.career-target-box::after,
+.results-target::after,
+.readiness-target::after,
+.roadmap-target::after,
+.dashboard-target::after {
+    content: "";
+    position: absolute;
+    top: -35px;
+    right: -34px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.level-card:nth-child(1) .level-number {
+    background: #f1f5f9 !important;
+    color: #64748b !important;
+}
+
+.level-card:nth-child(2) .level-number {
+    background: var(--blue-soft) !important;
+    color: var(--blue) !important;
+}
+
+.level-card:nth-child(3) .level-number {
+    background: var(--mint) !important;
+    color: var(--teal-dark) !important;
+}
+
+.level-card:nth-child(4) .level-number {
+    background: var(--violet-soft) !important;
+    color: var(--violet) !important;
+}
+
+.level-card input:checked + .level-card-content .level-number {
+    background: var(--gradient-accent) !important;
+    color: var(--white) !important;
+}
+
+.alignment-card {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 12% 50%,
+            rgba(45, 140, 136, 0.18),
+            transparent 17rem
+        ),
+        linear-gradient(
+            135deg,
+            rgba(224, 240, 239, 0.98),
+            rgba(227, 235, 246, 0.98)
+        ) !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+.score-circle {
+    box-shadow:
+        0 0 0 10px rgba(45, 140, 136, 0.035),
+        0 20px 50px rgba(45, 140, 136, 0.16);
+}
+
+.result-stat,
+.roadmap-stat,
+.summary-card,
+.indicator-card,
+.priority-card,
+.roadmap-track,
+.dashboard-priority {
+    position: relative;
+    overflow: hidden;
+}
+
+.result-stat::before,
+.roadmap-stat::before,
+.summary-card::before,
+.indicator-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: var(--teal);
+}
+
+.result-stat:nth-child(2)::before,
+.roadmap-stat:nth-child(2)::before,
+.summary-card:nth-child(2)::before,
+.indicator-card:nth-child(2)::before {
+    background: var(--blue);
+}
+
+.result-stat:nth-child(3)::before,
+.roadmap-stat:nth-child(3)::before,
+.summary-card:nth-child(3)::before,
+.indicator-card:nth-child(3)::before {
+    background: var(--amber);
+}
+
+.result-stat:nth-child(4)::before,
+.roadmap-stat:nth-child(4)::before,
+.summary-card:nth-child(4)::before,
+.indicator-card:nth-child(4)::before {
+    background: var(--violet);
+}
+
+.skill-result-row {
+    transition: 0.2s ease;
+}
+
+.skill-result-row:hover {
+    transform: translateX(3px);
+    border-color: rgba(45, 140, 136, 0.28) !important;
+}
+
+.adaptability-section {
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(59, 130, 246, 0.09),
+            transparent 25rem
+        ),
+        var(--surface-mix) !important;
+}
+
+.dimension-card {
+    background:
+        linear-gradient(
+            145deg,
+            #e3f0ef,
+            #e6edf5
+        ) !important;
+}
+
+.next-action-card {
+    box-shadow: 0 26px 55px rgba(21, 34, 56, 0.2);
+}
+
+.next-action-badge {
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+}
+
+.roadmap-track::before,
+.dashboard-priority::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background: var(--gradient-accent);
+}
+
+.roadmap-step {
+    position: relative;
+    overflow: hidden;
+}
+
+.roadmap-step::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 3px;
+    opacity: 0.35;
+    background: linear-gradient(90deg, var(--teal), transparent);
+}
+
+.roadmap-step:nth-child(2)::after {
+    background: linear-gradient(90deg, var(--blue), transparent);
+}
+
+.roadmap-step:nth-child(3)::after {
+    background: linear-gradient(90deg, var(--violet), transparent);
+}
+
+.evidence-booster {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(213, 235, 232, 0.94),
+            rgba(221, 232, 246, 0.94)
+        ) !important;
+}
+
+.path-progress-card {
+    background:
+        radial-gradient(
+            circle at 95% 20%,
+            rgba(59, 130, 246, 0.13),
+            transparent 18rem
+        ),
+        linear-gradient(
+            145deg,
+            rgba(226, 240, 239, 0.98),
+            rgba(230, 236, 246, 0.98)
+        ) !important;
+}
+
+.dashboard-next-action {
+    box-shadow: 0 22px 50px rgba(21, 34, 56, 0.18);
+}
+
+.dashboard-tabs {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 12px;
+    background: rgba(205, 224, 227, 0.75) !important;
+}
+
+.dashboard-tab {
+    border-radius: 9px !important;
+}
+
+.dashboard-tab.active {
+    background: #dceceb !important;
+    color: var(--navy) !important;
+    box-shadow: 0 7px 18px rgba(15, 23, 42, 0.07);
+}
+
+.dashboard-task {
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.dashboard-task:hover {
+    transform: translateX(3px);
+    background: rgba(211, 233, 231, 0.86) !important;
+}
+
+.task-check {
+    accent-color: var(--teal);
+}
+
+@media (hover: hover) {
+    .value-card:hover,
+    .career-card:hover,
+    .stage-card:hover .stage-card-content,
+    .career-option:hover .career-option-content,
+    .level-card:hover .level-card-content,
+    .indicator-card:hover,
+    .roadmap-track:hover,
+    .summary-card:hover,
+    .dashboard-priority:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 22px 50px rgba(15, 23, 42, 0.09) !important;
+    }
+
+    .result-stat:hover,
+    .roadmap-stat:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08) !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        padding-top: 72px;
+    }
+
+    .career-dashboard {
+        transform: none;
+    }
+
+    .value-section::before,
+    .career-section::before {
+        inset-inline: 1%;
+        border-radius: 28px;
+    }
+}
+
+@media (max-width: 650px) {
+    body::before {
+        opacity: 0.25;
+        background-size: 34px 34px;
+    }
+
+    .hero {
+        padding: 52px 0 76px;
+    }
+
+    .hero-visual::before {
+        top: -12px;
+        right: 12px;
+    }
+
+    .career-dashboard {
+        border-radius: 18px;
+    }
+
+    .section-label,
+    .block-label,
+    .small-label {
+        padding: 4px 7px;
+    }
+
+    .value-section::before,
+    .career-section::before {
+        inset: 12px 0;
+        border-radius: 22px;
+    }
+
+    .mode-header {
+        padding: 18px !important;
+    }
+
+    .dashboard-tabs {
+        width: 100%;
+    }
+
+    .dashboard-tab {
+        flex: 1;
+    }
+
+    .results-heading,
+    .readiness-heading,
+    .roadmap-header,
+    .my-path-header,
+    .assessment-top,
+    .mode-heading,
+    .stage-heading,
+    .onboarding-heading {
+        padding: 14px 15px;
+        border-radius: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills Assessment | Pathly</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/assessment.css">
+  <link rel="stylesheet" href="css/polish.css">
+  <link rel="stylesheet" href="css/visual-upgrade.css">
+  <link rel="stylesheet" href="css/session.css">
+</head>
+
+<body class="assessment-page">
+  <header class="navbar">
+    <div class="container navbar-content">
+      <a href="index.html" class="logo">Pathly<span>.</span></a>
+      <div class="navbar-tools">
+        <a href="career.html" class="back-link">← Change Career</a>
+        <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="assessment-main">
+    <div class="container assessment-container">
+      <div class="assessment-top">
+        <div>
+          <p class="section-label">SKILLS + EVIDENCE ASSESSMENT</p>
+          <h1 id="assessmentTitle">Your career assessment</h1>
+          <p id="assessmentDescription">
+            Choose the level that best reflects your current experience.
+          </p>
+        </div>
+
+        <div class="career-target-box">
+          <span>CAREER TARGET</span>
+          <strong id="careerTargetName">Loading...</strong>
+        </div>
+      </div>
+
+      <p class="data-provenance-note" id="dataProvenanceNote" hidden></p>
+
+      <div class="question-progress">
+        <div class="question-progress-info">
+          <span id="questionCounter">Skill 1</span>
+          <span id="progressPercent">0%</span>
+        </div>
+
+        <div class="question-progress-track">
+          <div class="question-progress-value" id="questionProgressValue"></div>
+        </div>
+      </div>
+
+      <section class="assessment-card" id="assessmentCard">
+        <div class="skill-question">
+          <span class="skill-number" id="skillNumber">01</span>
+          <p>How would you rate your ability in:</p>
+          <h2 id="skillName">Loading skill...</h2>
+          <p class="skill-definition" id="skillDefinition"></p>
+        </div>
+
+        <div class="assessment-block">
+          <div class="assessment-block-heading">
+            <div>
+              <span class="block-label">CURRENT LEVEL</span>
+              <h3>Choose the level that best describes you.</h3>
+            </div>
+          </div>
+
+          <div class="level-grid" id="levelGrid">
+            <label class="level-card">
+              <input type="radio" name="skillLevel" value="0">
+              <span class="level-card-content">
+                <span class="level-number">0</span>
+                <strong>Not Started</strong>
+                <small>I have not studied this skill yet.</small>
+              </span>
+            </label>
+
+            <label class="level-card">
+              <input type="radio" name="skillLevel" value="1">
+              <span class="level-card-content">
+                <span class="level-number">1</span>
+                <strong>Learning</strong>
+                <small>I understand the basics or am currently learning.</small>
+              </span>
+            </label>
+
+            <label class="level-card">
+              <input type="radio" name="skillLevel" value="2">
+              <span class="level-card-content">
+                <span class="level-number">2</span>
+                <strong>Applied</strong>
+                <small>I have used it in an assignment or project.</small>
+              </span>
+            </label>
+
+            <label class="level-card">
+              <input type="radio" name="skillLevel" value="3">
+              <span class="level-card-content">
+                <span class="level-number">3</span>
+                <strong>Independent</strong>
+                <small>I can use it independently.</small>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="assessment-block evidence-block">
+          <div class="assessment-block-heading">
+            <div>
+              <span class="block-label">EVIDENCE REFERENCES</span>
+              <h3>Where have you used this skill?</h3>
+            </div>
+            <p>Select at least one option, including “No Evidence Yet” if applicable.</p>
+          </div>
+
+          <div class="evidence-grid" id="evidenceGrid">
+            <label class="evidence-card">
+              <input type="checkbox" name="skillEvidence" value="Academic Assignment">
+              <span>Academic Assignment</span>
+            </label>
+
+            <label class="evidence-card">
+              <input type="checkbox" name="skillEvidence" value="Personal Project">
+              <span>Personal Project</span>
+            </label>
+
+            <label class="evidence-card">
+              <input type="checkbox" name="skillEvidence" value="Competition / Project">
+              <span>Competition / Project</span>
+            </label>
+
+            <label class="evidence-card">
+              <input type="checkbox" name="skillEvidence" value="Internship / Work">
+              <span>Internship / Work</span>
+            </label>
+
+            <label class="evidence-card">
+              <input type="checkbox" name="skillEvidence" value="Certificate">
+              <span>Certificate</span>
+            </label>
+
+            <label class="evidence-card">
+              <input type="checkbox" name="skillEvidence" value="Other" id="otherEvidence">
+              <span>Other</span>
+            </label>
+
+            <label class="evidence-card evidence-none">
+              <input type="checkbox" name="skillEvidence" value="None" id="noEvidence">
+              <span>No Evidence Yet</span>
+            </label>
+          </div>
+
+          <div class="evidence-other-detail" id="otherEvidenceDetail" hidden>
+            <label for="otherEvidenceText">Describe your other evidence</label>
+            <input
+              type="text"
+              id="otherEvidenceText"
+              maxlength="100"
+              placeholder="E.g. a student organization activity or community project"
+            >
+          </div>
+
+          <div class="evidence-other-detail" id="evidenceProofDetail" hidden>
+            <label for="evidenceProofText">Reference link or note (required)</label>
+            <input
+              type="text"
+              id="evidenceProofText"
+              maxlength="150"
+              placeholder="E.g. a portfolio link, course name, or project note"
+            >
+            <small class="evidence-proof-hint">
+              This is a portfolio inventory, not an automated verification. Do not enter private documents, ID numbers, or sensitive data.
+            </small>
+          </div>
+        </div>
+
+        <div class="assessment-message" id="assessmentMessage" aria-live="polite"></div>
+
+        <div class="assessment-actions">
+          <button type="button" class="btn btn-secondary" id="previousButton">
+            ← Previous
+          </button>
+
+          <button type="button" class="btn btn-primary" id="nextButton">
+            Save &amp; Continue <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="assessment-complete" id="assessmentComplete">
+        <div class="complete-icon">✓</div>
+        <p class="section-label">ASSESSMENT COMPLETE</p>
+        <h2>Your skills profile has been saved.</h2>
+        <p>Pathly will compare your skills with your career requirements.</p>
+
+        <div class="complete-summary">
+          <div>
+            <span>CAREER</span>
+            <strong id="completeCareer">-</strong>
+          </div>
+          <div>
+            <span>SKILLS ASSESSED</span>
+            <strong id="completeSkillCount">-</strong>
+          </div>
+          <div>
+            <span>WITH REFERENCES</span>
+            <strong id="completeEvidenceCount">-</strong>
+          </div>
+        </div>
+
+        <a href="results.html" class="btn btn-primary">
+          View Results <span>→</span>
+        </a>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="js/pages/assessment.js"></script>
+</body>
+</html>

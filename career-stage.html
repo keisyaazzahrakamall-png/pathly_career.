@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Career Stage | Pathly</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/polish.css">
+  <link rel="stylesheet" href="css/visual-upgrade.css">
+  <link rel="stylesheet" href="css/session.css">
+</head>
+
+<body class="onboarding-page">
+  <header class="navbar">
+    <div class="container navbar-content">
+      <a href="index.html" class="logo">Pathly<span>.</span></a>
+      <div class="navbar-tools">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="career-stage-main">
+    <div class="container stage-container">
+      <div class="onboarding-progress">
+        <div class="progress-info">
+          <span>Career Journey</span>
+          <span>Step 2</span>
+        </div>
+
+        <div class="onboarding-progress-track">
+          <div class="onboarding-progress-value stage-progress"></div>
+        </div>
+      </div>
+
+      <div class="stage-heading">
+        <p class="section-label">YOUR CAREER STAGE</p>
+
+        <h1 id="stageGreeting">
+          Where are you in your career journey?
+        </h1>
+
+        <p>
+          Choose the option that best reflects your current situation.
+        </p>
+        <p class="stage-flow-note">
+          These options describe your starting point. Explore and Prepare focus on one target; Compare lets you compare 2–3 targets.
+        </p>
+      </div>
+
+      <form id="careerStageForm" novalidate>
+        <div class="stage-grid">
+          <label class="stage-card">
+            <input type="radio" name="careerStage" value="explore" required>
+
+            <span class="stage-card-content">
+              <span class="stage-icon">?</span>
+              <span class="stage-badge">EXPLORE</span>
+
+              <strong>I am still exploring.</strong>
+
+              <span class="stage-description">
+                I do not have a clear career target yet and want to explore suitable options.
+              </span>
+
+              <span class="stage-result">
+                Pathly will help you:
+                <b>find your career direction</b>
+              </span>
+            </span>
+          </label>
+
+          <label class="stage-card">
+            <input type="radio" name="careerStage" value="validate">
+
+            <span class="stage-card-content">
+              <span class="stage-icon">⇄</span>
+              <span class="stage-badge">COMPARE</span>
+
+              <strong>I have a few options.</strong>
+
+              <span class="stage-description">
+                I want to compare careers before choosing my focus.
+              </span>
+
+              <span class="stage-result">
+                Pathly will help you:
+                <b>compare career options</b>
+              </span>
+            </span>
+          </label>
+
+          <label class="stage-card">
+            <input type="radio" name="careerStage" value="prepare">
+
+            <span class="stage-card-content">
+              <span class="stage-icon">✓</span>
+              <span class="stage-badge">PREPARE</span>
+
+              <strong>I know my target.</strong>
+
+              <span class="stage-description">
+                I want to identify the skills I need to develop for my target career.
+              </span>
+
+              <span class="stage-result">
+                Pathly will help you:
+                <b>prepare for your target</b>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="form-message" id="stageMessage" aria-live="polite"></div>
+
+        <div class="stage-actions">
+          <a href="index.html" class="btn btn-secondary">
+            Back
+          </a>
+
+          <button type="submit" class="btn btn-primary">
+            Continue <span>→</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="js/pages/protected-main.js"></script>
+</body>
+</html>

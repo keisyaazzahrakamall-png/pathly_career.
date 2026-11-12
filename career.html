@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Explore Careers | Pathly</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/career.css">
+  <link rel="stylesheet" href="css/polish.css">
+  <link rel="stylesheet" href="css/visual-upgrade.css">
+  <link rel="stylesheet" href="css/session.css">
+</head>
+
+<body class="career-explorer-page">
+  <header class="navbar">
+    <div class="container navbar-content">
+      <a href="index.html" class="logo">Pathly<span>.</span></a>
+      <div class="navbar-tools">
+        <a href="career-stage.html" class="back-link">← Career Stage</a>
+        <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="explorer-main">
+    <div class="container explorer-container">
+      <div class="onboarding-progress">
+        <div class="progress-info">
+          <span>Career Direction</span>
+          <span>Step 3</span>
+        </div>
+
+        <div class="onboarding-progress-track">
+          <div class="onboarding-progress-value career-progress-value"></div>
+        </div>
+      </div>
+
+      <div class="mode-header">
+        <div class="mode-heading">
+          <span class="mode-badge" id="modeBadge">CAREER MODE</span>
+          <h1 id="modeTitle">Explore your career direction.</h1>
+          <p id="modeDescription">Choose a career path to continue.</p>
+        </div>
+
+        <div class="mode-info">
+          <span>YOUR NEXT STEP</span>
+          <strong id="modeHint">Choose one career.</strong>
+        </div>
+      </div>
+
+      <p class="data-provenance-note" id="dataProvenanceNote" hidden></p>
+
+      <section class="dream-career-section" aria-labelledby="dreamCareerTitle">
+        <div class="dream-career-heading">
+          <div>
+            <p class="section-label">YOUR DREAM JOB</p>
+            <h2 id="dreamCareerTitle">Have a dream job in mind?</h2>
+            <p>
+              Enter the job you have in mind. Pathly will help you narrow it down if it is too broad.
+            </p>
+          </div>
+
+          <span class="dream-career-badge">Career catalog search</span>
+        </div>
+
+        <form class="dream-career-form" id="dreamCareerForm">
+          <label for="dreamCareerInput">Job title or career field</label>
+
+          <div class="dream-career-input-row">
+            <input
+              type="text"
+              id="dreamCareerInput"
+              placeholder="E.g. HR, Product Manager, or Cybersecurity Analyst"
+              autocomplete="off"
+              maxlength="80"
+              aria-describedby="dreamCareerHelp"
+              required
+            >
+
+            <button type="submit" class="btn btn-primary">
+              Use This Career <span>→</span>
+            </button>
+          </div>
+
+          <p class="dream-career-help" id="dreamCareerHelp">
+            Enter a specific title. Pathly currently supports careers that match its available catalog.
+          </p>
+        </form>
+
+        <div class="career-clarification" id="careerClarification" aria-live="polite">
+          <div class="clarification-heading">
+            <span>LET'S NARROW IT DOWN</span>
+            <h3 id="clarificationTitle">Choose a career direction that suits you.</h3>
+            <p id="clarificationDescription"></p>
+          </div>
+
+          <div class="specific-career-options" id="specificCareerOptions"></div>
+
+          <div class="clarification-actions">
+            <button type="button" class="btn btn-secondary" id="unsureCareerButton">
+              Not sure — help me choose
+            </button>
+
+            <button type="button" class="text-action" id="writeAnotherCareerButton">
+              Enter another role
+            </button>
+          </div>
+
+          <div class="career-preference-panel" id="careerPreferencePanel">
+            <p class="section-label">WHAT YOU ENJOY MOST</p>
+            <h3>Which activity interests you most?</h3>
+            <p>Choose one to get a suggested role.</p>
+
+            <div
+              class="career-preference-options"
+              id="careerPreferenceOptions"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="explorer-section-header">
+          <h2>Pathly Career Options</h2>
+          <p class="selection-counter" id="selectionCounter">0 selected</p>
+        </div>
+
+        <div class="explorer-career-grid" id="careerGrid"></div>
+        <div class="career-message" id="careerMessage" aria-live="polite"></div>
+
+        <div class="career-actions">
+          <a href="career-stage.html" class="btn btn-secondary">Back</a>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="careerContinueButton"
+            disabled
+          >
+            Continue <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="comparison-panel" id="comparisonPanel">
+        <div class="comparison-heading">
+          <p class="section-label">CAREER COMPARISON</p>
+          <h2>Compare before you choose.</h2>
+          <p>
+            Compare each role's focus and skills, then choose your career target.
+          </p>
+        </div>
+
+        <div class="comparison-grid" id="comparisonGrid"></div>
+
+        <div class="target-confirmation" id="targetConfirmation">
+          <span>SELECTED CAREER TARGET</span>
+          <strong id="targetConfirmationName"></strong>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="js/pages/career.js"></script>
+</body>
+</html>

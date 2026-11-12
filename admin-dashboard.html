@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Pathly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/session.css">
+  <link rel="stylesheet" href="css/dashboards.css">
+</head>
+<body class="role-dashboard">
+  <header class="navbar"><div class="container navbar-content">
+    <a href="index.html" class="logo">Pathly<span>.</span></a>
+    <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+  </div></header>
+  <main class="dash-container">
+    <p class="dash-status" id="dashboardStatus" role="status" aria-live="polite">Loading admin dashboard...</p>
+    <div id="dashboardContent" hidden>
+      <header class="dash-header"><div><span class="dash-tag">ADMIN WORKSPACE</span><h1>Keep every path connected.</h1><p>Manage account roles, assign supervisors, and monitor student progress.</p></div><button type="button" class="dash-button" id="refreshDashboard">Refresh data ↻</button></header>
+      <section class="dash-stats" aria-label="Account totals">
+        <article class="dash-stat"><span>Students</span><strong id="adminStudents">0</strong><small>Student accounts</small></article>
+        <article class="dash-stat"><span>Supervisors</span><strong id="adminSupervisors">0</strong><small>Supervisor accounts</small></article>
+        <article class="dash-stat"><span>Admins</span><strong id="adminAdmins">0</strong><small>Admin accounts</small></article>
+        <article class="dash-stat"><span>Assigned students</span><strong id="adminAssigned">0</strong><small id="adminUnassigned">No pending assignments</small></article>
+      </section>
+      <section class="dash-section" aria-labelledby="accountsTitle">
+        <div class="dash-section-heading"><div><h2 id="accountsTitle">Accounts and access.</h2><p>New accounts start as Students. Assign roles to registered accounts here.</p></div><div class="dash-search"><label for="accountSearch" class="dash-inline-label">Search name, major, or user ID</label><input id="accountSearch" type="search" placeholder="Search accounts..."></div></div>
+        <p id="roleMessage" class="dash-status" aria-live="polite"></p>
+        <div class="dash-table-wrap"><table class="dash-table"><thead><tr><th scope="col">Account</th><th scope="col">Major</th><th scope="col">Current role</th><th scope="col">Change role</th></tr></thead><tbody id="accountRows"></tbody></table></div>
+        <p class="dash-muted dash-subtitle">Remove an account's supervisor assignments before changing its role. Your own Admin role is protected.</p>
+      </section>
+      <section class="dash-section" aria-labelledby="assignmentsTitle">
+        <div class="dash-section-heading"><div><h2 id="assignmentsTitle">Supervisor assignments.</h2><p>Each Student can have one Supervisor. A Supervisor can guide several Students.</p></div></div>
+        <p id="assignmentMessage" class="dash-status" aria-live="polite"></p>
+        <div class="dash-table-wrap"><table class="dash-table"><thead><tr><th scope="col">Student</th><th scope="col">Career target</th><th scope="col">Roadmap progress</th><th scope="col">Supervisor</th></tr></thead><tbody id="assignmentRows"></tbody></table></div>
+      </section>
+      <section class="dash-section" aria-labelledby="historyTitle"><h2 id="historyTitle">Recent role changes.</h2><p class="dash-muted">The ten most recent changes made through this dashboard.</p><div id="roleHistory"></div></section>
+    </div>
+  </main>
+  <script type="module" src="js/pages/admin-dashboard.js"></script>
+</body>
+</html>

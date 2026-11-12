@@ -1,0 +1,467 @@
+html {
+    scroll-padding-top: 90px;
+}
+
+body {
+    min-height: 100vh;
+}
+
+button,
+a,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+.btn,
+.nav-links a {
+    transition: 0.2s ease;
+}
+
+.nav-links > a[href^="#"] {
+    position: relative;
+}
+
+.nav-links > a[href^="#"]::after {
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    left: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: #3478f6;
+    content: "";
+    opacity: 0;
+    transform: scaleX(0.35);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links > a[href^="#"].is-active {
+    color: #3478f6;
+}
+
+.nav-links > a[href^="#"].is-active::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(45, 140, 136, 0.22);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--mint);
+    color: var(--navy);
+}
+
+h1,
+h2,
+h3,
+p,
+span,
+strong {
+    overflow-wrap: break-word;
+}
+
+.btn {
+    min-height: 46px;
+}
+
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+.back-link {
+    white-space: nowrap;
+}
+
+.value-card,
+.career-card,
+.stage-card-content,
+.career-option-content,
+.assessment-card,
+.alignment-card,
+.indicator-card,
+.roadmap-track,
+.dashboard-priority,
+.summary-card {
+    border-color: var(--border);
+}
+
+.hero-content > *,
+.mode-header > *,
+.assessment-top > *,
+.results-heading > *,
+.readiness-heading > *,
+.roadmap-header > *,
+.my-path-header > *,
+.alignment-card > *,
+.roadmap-track > *,
+.dashboard-task > *,
+.dashboard-skill > * {
+    min-width: 0;
+}
+
+.dashboard-tabs {
+    overflow-x: auto;
+    scrollbar-width: thin;
+}
+
+.choice-card input:focus-visible + .choice-content,
+.stage-card input:focus-visible + .stage-card-content,
+.career-option input:focus-visible + .career-option-content,
+.level-card input:focus-visible + .level-card-content,
+.reflection-option input:focus-visible + span {
+    outline: 3px solid rgba(45, 140, 136, 0.22);
+    outline-offset: 3px;
+}
+
+@media (hover: hover) {
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .career-card:hover,
+    .value-card:hover,
+    .career-option:hover .career-option-content {
+        transform: translateY(-4px);
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: min(92%, 1200px);
+    }
+
+    .hero-content {
+        gap: 55px;
+    }
+
+    .results-heading,
+    .readiness-heading,
+    .roadmap-header,
+    .my-path-header,
+    .assessment-top,
+    .career-heading {
+        align-items: flex-start;
+    }
+
+    .dashboard-summary,
+    .roadmap-overview,
+    .result-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 92%;
+    }
+
+        .navbar-content {
+        min-height: 64px;
+    }
+
+    .nav-links {
+        top: 64px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .back-link {
+        font-size: 12px;
+    }
+
+    .menu-button {
+        width: 44px;
+        height: 44px;
+        line-height: 1;
+    }
+
+        .hero h1,
+    .onboarding-heading h1,
+    .stage-heading h1,
+    .mode-heading h1,
+    .assessment-top h1,
+    .results-heading h1,
+    .readiness-heading h1,
+    .roadmap-heading h1,
+    .my-path-header h1 {
+        font-size: 36px;
+        line-height: 1.1;
+        letter-spacing: -1.2px;
+    }
+
+    .section-heading h2,
+    .career-heading h2 {
+        font-size: 31px;
+    }
+
+        .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 12px 16px;
+        text-align: center;
+    }
+
+        .form-group input[type="text"],
+    .form-group select,
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+        .results-target,
+    .readiness-target,
+    .roadmap-target,
+    .dashboard-target,
+    .career-target-box,
+    .mode-info {
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+    }
+
+        .hero {
+        padding: 52px 0 70px;
+    }
+
+    .hero-content {
+        gap: 45px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .career-dashboard {
+        padding: 18px;
+    }
+
+    .value-grid,
+    .career-grid {
+        grid-template-columns: 1fr;
+    }
+
+        .profile-form {
+        padding: 24px 18px;
+    }
+
+    .option-grid,
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions,
+    .stage-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+        .stage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stage-card-content {
+        min-height: auto;
+    }
+
+        .explorer-career-grid,
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .career-option-content {
+        min-height: auto;
+    }
+
+    .career-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+        .assessment-card {
+        padding: 24px 17px;
+    }
+
+    .level-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .level-card-content {
+        min-height: 150px;
+    }
+
+    .evidence-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .assessment-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+        .alignment-card {
+        grid-template-columns: 1fr;
+        padding: 24px 18px;
+    }
+
+    .score-circle {
+        margin: 0 auto;
+    }
+
+    .result-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .priority-grid,
+    .skill-result-row {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-result-row {
+        gap: 7px;
+    }
+
+    .results-bottom {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+        .indicator-grid,
+    .dimension-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .adaptability-section {
+        padding: 25px 17px;
+    }
+
+    .adaptability-question {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .reflection-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .readiness-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+        .roadmap-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .next-action-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 20px;
+    }
+
+    .roadmap-track {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .roadmap-priority {
+        padding-right: 0;
+        padding-bottom: 18px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .roadmap-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .roadmap-step {
+        min-height: auto;
+    }
+
+    .roadmap-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+        .dashboard-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-next-action {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-priority {
+        padding: 18px;
+    }
+
+    .dashboard-task {
+        grid-template-columns: auto 1fr;
+    }
+
+    .task-type,
+    .task-title {
+        grid-column: 2;
+    }
+
+    .dashboard-skill {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .my-path-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+        .dashboard-tabs {
+        gap: 0;
+    }
+
+    .dashboard-tab {
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero h1,
+    .onboarding-heading h1,
+    .stage-heading h1,
+    .mode-heading h1,
+    .assessment-top h1,
+    .results-heading h1,
+    .readiness-heading h1,
+    .roadmap-heading h1,
+    .my-path-header h1 {
+        font-size: 32px;
+    }
+
+    .level-grid,
+    .result-stats,
+    .roadmap-overview,
+    .dashboard-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .level-card-content {
+        min-height: auto;
+    }
+
+    .reflection-options {
+        grid-template-columns: 1fr 1fr;
+    }
+}

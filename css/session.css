@@ -1,0 +1,373 @@
+.nav-auth,
+.navbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-auth {
+  flex-wrap: wrap;
+}
+
+.profile-menu {
+  position: relative;
+}
+
+.account-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.profile-trigger {
+  padding: 3px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-trigger:hover,
+.profile-menu.open .profile-trigger {
+  border-color: rgba(45, 140, 136, 0.38);
+  background: rgba(234, 247, 245, 0.9);
+}
+
+.profile-trigger:focus-visible {
+  outline: 3px solid rgba(45, 140, 136, 0.28);
+  outline-offset: 2px;
+}
+
+.account-avatar {
+  display: inline-grid;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(29, 143, 140, 0.28);
+  border-radius: 50%;
+  background: #e8f6f5;
+  color: var(--teal-dark);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.profile-menu-panel {
+  position: absolute;
+  z-index: 100;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(290px, calc(100vw - 32px));
+  padding: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.16);
+}
+
+.profile-menu-panel[hidden] {
+  display: none;
+}
+
+.profile-menu-header {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 11px;
+  align-items: center;
+  padding: 8px 8px 14px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-menu-avatar {
+  width: 42px;
+  height: 42px;
+}
+
+.profile-identity {
+  display: block;
+  min-width: 0;
+}
+
+.profile-identity strong,
+.profile-identity small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-identity strong {
+  color: var(--navy);
+  font-size: 14px;
+}
+
+.profile-identity small {
+  margin-top: 2px;
+  color: var(--text-gray);
+  font-size: 12px;
+}
+
+.profile-menu-item {
+  display: flex;
+  width: 100%;
+  min-height: 42px;
+  align-items: center;
+  padding: 9px 11px;
+  border-radius: 9px;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.profile-menu-item:hover,
+.profile-menu-item:focus-visible {
+  background: var(--mint);
+  color: var(--teal-dark);
+  outline: none;
+}
+
+.profile-menu-logout {
+  color: #a34141;
+}
+
+.profile-menu-reset {
+  color: #8a5a12;
+}
+
+.profile-menu-reset:hover,
+.profile-menu-reset:focus-visible {
+  background: #fff5df;
+  color: #74480a;
+}
+
+.profile-menu-logout:hover,
+.profile-menu-logout:focus-visible {
+  background: var(--red-light);
+  color: #8f3434;
+}
+
+.logout-button,
+.session-login-link {
+  min-height: 40px;
+  padding: 9px 14px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dialog-open {
+  overflow: hidden;
+}
+
+.reset-dialog-backdrop {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.56);
+  backdrop-filter: blur(4px);
+}
+
+.reset-dialog-backdrop[hidden] {
+  display: none;
+}
+
+.reset-dialog {
+  width: min(480px, 100%);
+  padding: 28px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.28);
+}
+
+.reset-dialog-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff5df;
+  color: #8a5a12;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.reset-dialog-label {
+  margin: 0 0 7px;
+  color: var(--teal-dark);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.reset-dialog h2 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: clamp(22px, 4vw, 28px);
+}
+
+.reset-dialog #resetDialogDescription {
+  margin: 0;
+  color: var(--text-gray);
+  line-height: 1.65;
+}
+
+.reset-dialog-message {
+  min-height: 20px;
+  margin: 12px 0 0;
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.reset-dialog-message:empty {
+  display: none;
+}
+
+.reset-dialog-message.error {
+  color: #a34141;
+}
+
+.reset-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.reset-dialog-actions button {
+  min-height: 43px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.reset-dialog-cancel {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--navy);
+}
+
+.reset-dialog-confirm {
+  border: 1px solid #a34141;
+  background: #a34141;
+  color: #fff;
+}
+
+.reset-dialog-actions button:focus-visible {
+  outline: 3px solid rgba(45, 140, 136, 0.28);
+  outline-offset: 2px;
+}
+
+.reset-dialog-actions button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.logout-button {
+  border: 1px solid var(--navy);
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 7px 18px rgba(21, 34, 56, 0.2);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.logout-button:hover {
+  border-color: var(--teal-dark);
+  background: var(--teal-dark);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.logout-button:focus-visible {
+  outline: 3px solid rgba(45, 140, 136, 0.28);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .nav-auth {
+    width: 100%;
+  }
+}
+
+.session-login-link:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.logout-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.session-login-link {
+  border: 1px solid var(--border);
+  color: var(--navy);
+}
+
+@media (max-width: 720px) {
+  .navbar-tools {
+    gap: 8px;
+  }
+
+  .navbar-tools .back-link {
+    display: none;
+  }
+
+  .nav-links .nav-auth {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 10px;
+  }
+
+  .nav-links .nav-auth > a,
+  .nav-links .nav-auth > button,
+  .nav-links .nav-auth > .account-chip {
+    width: 100%;
+  }
+
+  .nav-links .profile-menu {
+    width: 100%;
+  }
+
+  .nav-links .profile-trigger {
+    width: auto;
+  }
+
+  .nav-links .profile-menu-panel {
+    position: static;
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+  }
+
+  .reset-dialog {
+    padding: 22px;
+  }
+
+  .reset-dialog-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .reset-dialog-actions button {
+    width: 100%;
+  }
+
+}
