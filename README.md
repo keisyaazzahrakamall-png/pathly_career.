@@ -4,7 +4,7 @@
 
 A career-readiness web application for D3, D4, and bachelor's students. Pathly connects career exploration, self-assessment, skill-gap analysis, reflection, and a personal roadmap in one account.
 
-- Existing live demo: https://pathly-velora.vercel.app/
+- Existing live demo: https://pathlycareer-sandy.vercel.app
 - Repository: https://github.com/keisyaazzahrakamall-png/pathly_career..git
 - This source package uses an English interface. The existing live demo changes only after you deploy this version.
 
