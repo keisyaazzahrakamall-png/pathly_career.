@@ -218,4 +218,6 @@ See [privacy.html](privacy.html) for the in-app privacy summary. Use private sub
 
 Copyright © 2026 Keisya Azzahra Kamal. No open-source license has been granted; reuse requires the project owner's permission.
 
-PDF progress report feature added.
+PDF progress report feature added
+
+
