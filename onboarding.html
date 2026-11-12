@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Career Profile | Pathly</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/polish.css">
+  <link rel="stylesheet" href="css/visual-upgrade.css">
+  <link rel="stylesheet" href="css/session.css">
+</head>
+
+<body class="onboarding-page">
+  <header class="navbar">
+    <div class="container navbar-content">
+      <a href="index.html" class="logo">Pathly<span>.</span></a>
+      <div class="navbar-tools">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="onboarding-main">
+    <div class="container onboarding-container">
+      <div class="onboarding-progress">
+        <div class="progress-info">
+          <span>Career Profile</span>
+          <span>Step 1</span>
+        </div>
+
+        <div class="onboarding-progress-track">
+          <div class="onboarding-progress-value"></div>
+        </div>
+      </div>
+
+      <div class="onboarding-heading">
+        <p class="section-label" id="profilePageLabel">LET'S START WITH YOU</p>
+        <h1 id="profilePageTitle">Build your career profile.</h1>
+        <p id="profilePageDescription">
+          Tell us about your education and experience so Pathly can personalize your path.
+        </p>
+      </div>
+
+      <form class="profile-form" id="profileForm" novalidate>
+        <div class="form-message" id="formMessage" aria-live="polite"></div>
+
+        <div class="form-group">
+          <label for="fullName">What should we call you?</label>
+          <p class="field-help">Use your first name or nickname.</p>
+
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="E.g. Keisya"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>What is your education level?</label>
+          <p class="field-help">Choose the qualification you are currently pursuing.</p>
+
+          <div class="option-grid education-options">
+            <label class="choice-card">
+              <input type="radio" name="educationLevel" value="D3" required>
+              <span class="choice-content">
+                <strong>D3</strong>
+                <small>Three-Year Diploma</small>
+              </span>
+            </label>
+
+            <label class="choice-card">
+              <input type="radio" name="educationLevel" value="D4">
+              <span class="choice-content">
+                <strong>D4</strong>
+                <small>Applied Bachelor's Degree</small>
+              </span>
+            </label>
+
+            <label class="choice-card">
+              <input type="radio" name="educationLevel" value="S1">
+              <span class="choice-content">
+                <strong>S1</strong>
+                <small>Bachelor's Degree</small>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="major">What is your field of study?</label>
+          <p class="field-help">Enter your major or study program.</p>
+
+          <input
+            type="text"
+            id="major"
+            name="major"
+            placeholder="E.g. Information Systems"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="semester">Current semester</label>
+          <p class="field-help">Helps us understand your development timeline.</p>
+
+          <select id="semester" name="semester" required>
+            <option value="">Select semester</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+            <option value="7">Semester 7</option>
+            <option value="8">Semester 8</option>
+            <option value="9">Semester 9+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="graduationYear">Expected graduation year</label>
+          <p class="field-help">An estimate is fine.</p>
+
+          <select id="graduationYear" name="graduationYear" required>
+            <option value="">Select year</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            <option value="2031">2031</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>What experience do you have?</label>
+          <p class="field-help">Select at least one option that applies.</p>
+
+          <div class="experience-grid">
+            <label class="checkbox-card">
+              <input type="checkbox" name="experience" value="Academic Project">
+              <span>Academic Project</span>
+            </label>
+
+            <label class="checkbox-card">
+              <input type="checkbox" name="experience" value="Personal Project">
+              <span>Personal Project</span>
+            </label>
+
+            <label class="checkbox-card">
+              <input type="checkbox" name="experience" value="Organization">
+              <span>Student Organization</span>
+            </label>
+
+            <label class="checkbox-card">
+              <input type="checkbox" name="experience" value="Competition">
+              <span>Competition</span>
+            </label>
+
+            <label class="checkbox-card">
+              <input type="checkbox" name="experience" value="Internship">
+              <span>Internship</span>
+            </label>
+
+            <label class="checkbox-card">
+              <input type="checkbox" name="experience" value="Work Experience">
+              <span>Work Experience</span>
+            </label>
+
+            <label class="checkbox-card experience-none">
+              <input type="checkbox" name="experience" value="No Experience" data-no-experience>
+              <span>No Experience Yet</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <a href="index.html" class="btn btn-secondary" id="profileBackButton">Back</a>
+
+          <button type="submit" class="btn btn-primary" id="profileSaveButton">
+            Save &amp; Continue <span>→</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="js/pages/protected-main.js"></script>
+</body>
+</html>

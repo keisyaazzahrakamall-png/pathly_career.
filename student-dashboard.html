@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | Pathly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/session.css">
+  <link rel="stylesheet" href="css/dashboards.css">
+</head>
+<body class="role-dashboard">
+  <header class="navbar"><div class="container navbar-content">
+    <a href="index.html" class="logo">Pathly<span>.</span></a>
+    <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+  </div></header>
+  <main class="dash-container">
+    <p class="dash-status" id="dashboardStatus" role="status" aria-live="polite">Loading your dashboard...</p>
+    <div id="dashboardContent" hidden>
+      <header class="dash-header">
+        <div><span class="dash-tag">STUDENT WORKSPACE</span><h1 id="studentWelcome">Your next chapter starts here.</h1><p>Your career plan, progress, and supervisor guidance in one place.</p></div>
+        <a href="career-stage.html" class="btn btn-primary" id="continueJourney">Continue My Path →</a>
+      </header>
+      <section class="dash-stats" aria-label="Your progress">
+        <article class="dash-stat"><span>Career target</span><strong id="studentTarget">—</strong><small>Your active career direction</small></article>
+        <article class="dash-stat"><span>Roadmap progress</span><strong id="studentProgress">0%</strong><small id="studentTasks">No roadmap yet</small></article>
+        <article class="dash-stat"><span>Assessments</span><strong id="studentAssessments">0</strong><small>Completed career assessments</small></article>
+        <article class="dash-stat"><span>Supervisor feedback</span><strong id="studentFeedbackCount">0</strong><small>Saved guidance for your journey</small></article>
+      </section>
+      <div class="dash-grid">
+        <section class="dash-section" aria-labelledby="feedbackTitle">
+          <div class="dash-section-heading"><div><h2 id="feedbackTitle">Guidance for you.</h2><p id="studentSupervisor">No supervisor assigned yet.</p></div><button type="button" class="dash-button" id="refreshFeedback">Refresh</button></div>
+          <div id="studentFeedback"></div>
+        </section>
+        <section class="dash-section" aria-labelledby="nextStepTitle">
+          <p class="section-label">KEEP MOVING FORWARD</p><h2 id="nextStepTitle">One step at a time.</h2>
+          <p class="dash-muted" id="studentNextStep">Complete your profile to personalize your path.</p>
+          <nav class="dash-shortcuts" aria-label="Student actions">
+            <a href="onboarding.html?edit=profile">Edit education profile →</a>
+            <a href="career-stage.html">Explore or change career target →</a>
+            <a href="my-path.html">Open My Path and roadmap tasks →</a>
+          </nav>
+          <p class="dash-muted dash-subtitle">Your assigned supervisor can review your career journey and send feedback. Admins manage accounts and assignments.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="js/pages/student-dashboard.js"></script>
+</body>
+</html>

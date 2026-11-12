@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Path | Pathly</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/my-path.css">
+  <link rel="stylesheet" href="css/polish.css">
+  <link rel="stylesheet" href="css/visual-upgrade.css">
+  <link rel="stylesheet" href="css/session.css">
+</head>
+
+<body class="my-path-page">
+  <header class="navbar">
+    <div class="container navbar-content">
+      <a href="index.html" class="logo">Pathly<span>.</span></a>
+      <div class="navbar-tools">
+        <a href="index.html" class="back-link">← Home</a>
+        <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="my-path-main">
+    <div class="container my-path-container" id="myPathContainer">
+      <section class="my-path-header">
+        <div>
+          <p class="section-label">MY PATH</p>
+          <h1>Keep building your path.</h1>
+          <p>Track your target, skills, and roadmap in one place.</p>
+        </div>
+
+        <div class="dashboard-target">
+          <span>CAREER TARGET</span>
+          <strong id="dashboardCareer">Loading...</strong>
+          <a href="#careerHistory" class="dashboard-target-switch">
+            Change Career Target
+          </a>
+        </div>
+      </section>
+
+      <section class="dashboard-summary">
+        <article class="summary-card">
+          <span>SKILL ALIGNMENT</span>
+          <strong id="dashboardAlignment">-</strong>
+          <p>How your skills align with career requirements</p>
+        </article>
+
+        <article class="summary-card">
+          <span>ROADMAP PROGRESS</span>
+          <strong id="dashboardProgress">0%</strong>
+          <p id="dashboardProgressText">0 of 0 tasks complete</p>
+        </article>
+
+        <article class="summary-card">
+          <span>DEVELOPED SKILLS</span>
+          <strong id="dashboardDeveloped">-</strong>
+          <p>Skills that have reached the target level</p>
+        </article>
+
+        <article class="summary-card">
+          <span>RECORDED REFERENCES</span>
+          <strong id="dashboardEvidence">-</strong>
+          <p>Skills with a reference note or link</p>
+        </article>
+      </section>
+
+      <section class="career-history" id="careerHistory" aria-labelledby="careerHistoryTitle">
+        <div class="career-history-heading">
+          <div>
+            <p class="section-label">TARGET HISTORY</p>
+            <h2 id="careerHistoryTitle">Careers you have assessed.</h2>
+            <p>
+              Return to an earlier target without deleting assessments or roadmaps for other careers.
+            </p>
+          </div>
+
+          <a href="career-stage.html" class="btn btn-secondary">
+            Choose Another Career
+          </a>
+        </div>
+
+        <p class="career-history-message" id="careerHistoryMessage" aria-live="polite">
+          Loading career history...
+        </p>
+        <div class="career-history-list" id="careerHistoryList"></div>
+      </section>
+
+      <section class="path-progress-card">
+        <div class="path-progress-top">
+          <div>
+            <p class="section-label">ROADMAP PROGRESS</p>
+            <h2>Your development journey.</h2>
+          </div>
+
+          <strong id="pathProgressPercent">0%</strong>
+        </div>
+
+        <div class="path-progress-track">
+          <div class="path-progress-value" id="pathProgressValue"></div>
+        </div>
+      </section>
+
+      <section class="dashboard-next-action">
+        <div>
+          <span class="next-label">NEXT ACTION</span>
+          <h2 id="dashboardNextTitle">Loading next action...</h2>
+          <p id="dashboardNextMeta">-</p>
+        </div>
+      </section>
+
+      <div class="dashboard-tabs">
+        <button
+          class="dashboard-tab active"
+          data-tab="roadmap"
+          type="button"
+        >
+          Roadmap
+        </button>
+
+        <button
+          class="dashboard-tab"
+          data-tab="skills"
+          type="button"
+        >
+          Skills
+        </button>
+      </div>
+
+      <section class="dashboard-panel active" id="roadmapPanel">
+        <div class="panel-heading">
+          <p class="section-label">DEVELOPMENT TASKS</p>
+          <h2>Learn. Apply. Prove.</h2>
+          <p>
+            Check a task when you finish it. Uncheck it to undo; your progress is saved to your account.
+          </p>
+        </div>
+
+        <p class="task-save-message" id="taskSaveMessage" aria-live="polite"></p>
+        <div class="dashboard-roadmap" id="dashboardRoadmap"></div>
+      </section>
+
+      <section class="dashboard-panel" id="skillsPanel">
+        <div class="panel-heading">
+          <p class="section-label">CURRENT SKILLS</p>
+          <h2>Your skills at a glance.</h2>
+          <p>Status based on your latest assessment.</p>
+        </div>
+
+        <div class="dashboard-skills" id="dashboardSkills"></div>
+      </section>
+
+      <div class="my-path-actions">
+        <a href="roadmap.html" class="btn btn-secondary">
+          View Full Roadmap
+        </a>
+
+        <a href="assessment.html" class="btn btn-primary">
+          Update Skills <span>→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/pages/my-path.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirm your Pathly account email.">
+    <title>Confirm Email | Pathly</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/polish.css">
+    <link rel="stylesheet" href="css/visual-upgrade.css">
+  </head>
+  <body class="auth-page">
+    <header class="navbar auth-navbar">
+      <div class="container navbar-content">
+        <a href="index.html" class="logo">Pathly<span>.</span></a>
+        <div class="auth-navbar-actions">
+          <a href="index.html" class="auth-back-link">← Home</a>
+          <a href="login.html" class="auth-navbar-link">Sign In</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="auth-main">
+      <div class="container auth-shell auth-shell-login">
+        <section class="auth-intro" aria-labelledby="confirmationTitle">
+          <p class="section-label">ACCOUNT ACTIVATION</p>
+          <h1 id="confirmationTitle">One step before you begin.</h1>
+          <p class="auth-intro-copy">
+            We are checking your verification link to get your email and Pathly account ready.
+          </p>
+
+          <div class="auth-return-card">
+            <span aria-hidden="true">✓</span>
+            <div>
+              <strong>After verification</strong>
+              <p>You can complete your profile and save your career journey.</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="auth-card"
+          id="confirmationCard"
+          aria-labelledby="confirmationStateTitle"
+          aria-busy="true"
+        >
+          <div class="auth-success" id="confirmationState" tabindex="-1">
+            <span class="auth-success-icon auth-confirmation-icon" id="confirmationIcon" aria-hidden="true">…</span>
+            <p class="section-label" id="confirmationLabel">VERIFYING EMAIL</p>
+            <h2 id="confirmationStateTitle">Just a moment...</h2>
+            <p id="confirmationDescription">
+              We are checking the confirmation link from your email.
+            </p>
+            <p class="auth-success-note" id="confirmationEmail" hidden></p>
+
+            <div class="auth-confirmation-actions">
+              <a href="onboarding.html" class="btn btn-primary" id="confirmationPrimary" hidden>
+                Complete Profile <span aria-hidden="true">→</span>
+              </a>
+              <a href="signup.html" class="btn btn-secondary" id="confirmationRetry" hidden>
+                Back to Sign Up
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="js/pages/confirm-email.js"></script>
+  </body>
+</html>

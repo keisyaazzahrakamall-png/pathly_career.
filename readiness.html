@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Career Readiness | Pathly</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/readiness.css">
+  <link rel="stylesheet" href="css/polish.css">
+  <link rel="stylesheet" href="css/visual-upgrade.css">
+  <link rel="stylesheet" href="css/session.css">
+</head>
+
+<body class="readiness-page">
+  <header class="navbar">
+    <div class="container navbar-content">
+      <a href="index.html" class="logo">Pathly<span>.</span></a>
+      <div class="navbar-tools">
+        <a href="results.html" class="back-link">← Skill Gaps</a>
+        <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="readiness-main">
+    <div class="container readiness-container">
+      <div class="readiness-heading">
+        <div>
+          <p class="section-label">CAREER READINESS OVERVIEW</p>
+          <h1>See the bigger picture.</h1>
+          <p>
+            Review several indicators of your current career readiness.
+          </p>
+        </div>
+
+        <div class="readiness-target">
+          <span>CAREER TARGET</span>
+          <strong id="readinessCareer">Loading...</strong>
+        </div>
+      </div>
+
+      <section class="indicator-grid">
+        <article class="indicator-card">
+          <div class="indicator-top">
+            <span class="indicator-number">01</span>
+            <span class="indicator-label">DIRECTION</span>
+          </div>
+
+          <h2>Career Clarity</h2>
+          <strong class="indicator-status" id="clarityStatus">Checking...</strong>
+          <p id="clarityDescription">Checking your chosen career direction.</p>
+        </article>
+
+        <article class="indicator-card">
+          <div class="indicator-top">
+            <span class="indicator-number">02</span>
+            <span class="indicator-label">SKILLS</span>
+          </div>
+
+          <h2>Skill Alignment</h2>
+          <strong class="indicator-status" id="readinessAlignment">0%</strong>
+          <p>How your skills align with career requirements.</p>
+        </article>
+
+        <article class="indicator-card">
+          <div class="indicator-top">
+            <span class="indicator-number">03</span>
+            <span class="indicator-label">EVIDENCE</span>
+          </div>
+
+          <h2>Evidence Reference Coverage</h2>
+          <strong class="indicator-status" id="evidenceStatus">Checking...</strong>
+          <p id="evidenceDescription">Counting skills with references.</p>
+        </article>
+
+        <article class="indicator-card">
+          <div class="indicator-top">
+            <span class="indicator-number">04</span>
+            <span class="indicator-label">ADAPTABILITY</span>
+          </div>
+
+          <h2>Career Adaptability</h2>
+          <strong class="indicator-status" id="adaptabilityStatus">
+            Not assessed yet
+          </strong>
+          <p id="adaptabilityDescription">
+            Complete the short reflection below.
+          </p>
+        </article>
+      </section>
+
+      <div class="readiness-note">
+        <strong>These indicators do not predict employment outcomes.</strong>
+        <p>Use the results to help plan your career preparation.</p>
+      </div>
+
+      <section class="adaptability-section">
+        <div class="adaptability-heading">
+          <p class="section-label">CAREER ADAPTABILITY REFLECTION</p>
+          <h2>How are you preparing for your future?</h2>
+          <p>
+            Respond to two statements in each dimension. This reflection supports planning; it is not a psychological test or a predictor of employment.
+          </p>
+          <p class="reflection-disclaimer">
+            Pathly wrote these eight statements based on four career adaptability dimensions. This is not the 24-item CAAS instrument and has not been psychometrically validated.
+          </p>
+        </div>
+
+        <form id="adaptabilityForm" novalidate>
+          <div class="form-message" id="adaptabilityMessage" aria-live="polite"></div>
+
+          <div class="adaptability-question">
+            <div class="dimension-info">
+              <span>CONCERN</span>
+              <h3>How much do you think about and prepare for your future?</h3>
+            </div>
+
+            <div class="reflection-items">
+              <fieldset class="reflection-item">
+                <legend>I have a sense of my career goals for the next 6–12 months.</legend>
+                <div class="reflection-options">
+                  <label class="reflection-option"><input type="radio" name="concernPlan" value="1" required><span>Not yet</span></label>
+                  <label class="reflection-option"><input type="radio" name="concernPlan" value="2"><span>Slightly</span></label>
+                  <label class="reflection-option"><input type="radio" name="concernPlan" value="3"><span>Mostly</span></label>
+                  <label class="reflection-option"><input type="radio" name="concernPlan" value="4"><span>Very much</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="reflection-item">
+                <legend>I have identified actions I need to take soon.</legend>
+                <div class="reflection-options">
+                  <label class="reflection-option"><input type="radio" name="concernAction" value="1" required><span>Not yet</span></label>
+                  <label class="reflection-option"><input type="radio" name="concernAction" value="2"><span>Slightly</span></label>
+                  <label class="reflection-option"><input type="radio" name="concernAction" value="3"><span>Mostly</span></label>
+                  <label class="reflection-option"><input type="radio" name="concernAction" value="4"><span>Very much</span></label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="adaptability-question">
+            <div class="dimension-info">
+              <span>CONTROL</span>
+              <h3>How actively do you guide your own decisions and actions?</h3>
+            </div>
+
+            <div class="reflection-items">
+              <fieldset class="reflection-item">
+                <legend>I make career decisions based on my own judgment.</legend>
+                <div class="reflection-options">
+                  <label class="reflection-option"><input type="radio" name="controlDecision" value="1" required><span>Not yet</span></label>
+                  <label class="reflection-option"><input type="radio" name="controlDecision" value="2"><span>Slightly</span></label>
+                  <label class="reflection-option"><input type="radio" name="controlDecision" value="3"><span>Mostly</span></label>
+                  <label class="reflection-option"><input type="radio" name="controlDecision" value="4"><span>Very much</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="reflection-item">
+                <legend>I keep taking small steps even when I do not feel fully ready.</legend>
+                <div class="reflection-options">
+                  <label class="reflection-option"><input type="radio" name="controlAction" value="1" required><span>Not yet</span></label>
+                  <label class="reflection-option"><input type="radio" name="controlAction" value="2"><span>Slightly</span></label>
+                  <label class="reflection-option"><input type="radio" name="controlAction" value="3"><span>Mostly</span></label>
+                  <label class="reflection-option"><input type="radio" name="controlAction" value="4"><span>Very much</span></label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="adaptability-question">
+            <div class="dimension-info">
+              <span>CURIOSITY</span>
+              <h3>How actively do you explore and compare possibilities?</h3>
+            </div>
+
+            <div class="reflection-items">
+              <fieldset class="reflection-item">
+                <legend>I look for information about tasks and skills in different careers.</legend>
+                <div class="reflection-options">
+                  <label class="reflection-option"><input type="radio" name="curiosityExplore" value="1" required><span>Not yet</span></label>
+                  <label class="reflection-option"><input type="radio" name="curiosityExplore" value="2"><span>Slightly</span></label>
+                  <label class="reflection-option"><input type="radio" name="curiosityExplore" value="3"><span>Mostly</span></label>
+                  <label class="reflection-option"><input type="radio" name="curiosityExplore" value="4"><span>Very much</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="reflection-item">
+                <legend>I compare options before choosing my main target.</legend>
+                <div class="reflection-options">
+                  <label class="reflection-option"><input type="radio" name="curiosityCompare" value="1" required><span>Not yet</span></label>
+                  <label class="reflection-option"><input type="radio" name="curiosityCompare" value="2"><span>Slightly</span></label>
+                  <label class="reflection-option"><input type="radio" name="curiosityCompare" value="3"><span>Mostly</span></label>
+                  <label class="reflection-option"><input type="radio" name="curiosityCompare" value="4"><span>Very much</span></label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="adaptability-question">
+            <div class="dimension-info">
+              <span>CONFIDENCE</span>
+              <h3>How confident are you in learning and overcoming obstacles?</h3>
+            </div>
+
+            <div class="reflection-items">
+              <fieldset class="reflection-item">
+                <legend>I believe I can learn skills I have not mastered yet.</legend>
+                <div class="reflection-options">
+                  <label class="reflection-option"><input type="radio" name="confidenceLearn" value="1" required><span>Not yet</span></label>
+                  <label class="reflection-option"><input type="radio" name="confidenceLearn" value="2"><span>Slightly</span></label>
+                  <label class="reflection-option"><input type="radio" name="confidenceLearn" value="3"><span>Mostly</span></label>
+                  <label class="reflection-option"><input type="radio" name="confidenceLearn" value="4"><span>Very much</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="reflection-item">
+                <legend>When I face difficulties, I can find another approach and try again.</legend>
+                <div class="reflection-options">
+                  <label class="reflection-option"><input type="radio" name="confidenceRecover" value="1" required><span>Not yet</span></label>
+                  <label class="reflection-option"><input type="radio" name="confidenceRecover" value="2"><span>Slightly</span></label>
+                  <label class="reflection-option"><input type="radio" name="confidenceRecover" value="3"><span>Mostly</span></label>
+                  <label class="reflection-option"><input type="radio" name="confidenceRecover" value="4"><span>Very much</span></label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="adaptability-actions">
+            <p class="adaptability-save-state" id="adaptabilitySaveState" aria-live="polite">
+              Responses are saved only when you press the button.
+            </p>
+            <button type="submit" class="btn btn-primary">
+              Save Reflection <span>→</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="dimension-results" id="dimensionResults">
+        <div class="result-section-heading">
+          <p class="section-label">YOUR REFLECTION RESULTS</p>
+          <h2>Adaptability dimensions.</h2>
+          <p>A summary based on your current responses.</p>
+        </div>
+
+        <div class="dimension-grid">
+          <div class="dimension-card">
+            <span>CONCERN</span>
+            <strong id="concernResult">-</strong>
+          </div>
+
+          <div class="dimension-card">
+            <span>CONTROL</span>
+            <strong id="controlResult">-</strong>
+          </div>
+
+          <div class="dimension-card">
+            <span>CURIOSITY</span>
+            <strong id="curiosityResult">-</strong>
+          </div>
+
+          <div class="dimension-card">
+            <span>CONFIDENCE</span>
+            <strong id="confidenceResult">-</strong>
+          </div>
+        </div>
+      </section>
+
+      <div class="readiness-actions">
+        <a href="results.html" class="btn btn-secondary">
+          Back to Results
+        </a>
+
+        <button type="button" class="btn btn-primary" id="roadmapButton" disabled>
+          Build My Roadmap <span>→</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/pages/readiness.js"></script>
+</body>
+</html>

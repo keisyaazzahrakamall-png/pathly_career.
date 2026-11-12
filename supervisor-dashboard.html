@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supervisor Dashboard | Pathly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/session.css">
+  <link rel="stylesheet" href="css/dashboards.css">
+</head>
+<body class="role-dashboard">
+  <header class="navbar"><div class="container navbar-content">
+    <a href="index.html" class="logo">Pathly<span>.</span></a>
+    <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+  </div></header>
+  <main class="dash-container">
+    <p class="dash-status" id="dashboardStatus" role="status" aria-live="polite">Loading supervisor dashboard...</p>
+    <div id="dashboardContent" hidden>
+      <header class="dash-header"><div><span class="dash-tag">SUPERVISOR WORKSPACE</span><h1>Help the next step take shape.</h1><p>Review your assigned Students and share practical career guidance.</p></div><button type="button" class="dash-button" id="refreshDashboard">Refresh data ↻</button></header>
+      <section class="dash-stats" aria-label="Supervision overview">
+        <article class="dash-stat"><span>Assigned students</span><strong id="supervisorStudents">0</strong><small>Managed by your Admin</small></article>
+        <article class="dash-stat"><span>Active targets</span><strong id="supervisorTargets">0</strong><small>Students with a career target</small></article>
+        <article class="dash-stat"><span>Active roadmaps</span><strong id="supervisorRoadmaps">0</strong><small>Students with a current roadmap</small></article>
+        <article class="dash-stat"><span>Average progress</span><strong id="supervisorProgress">—</strong><small>Across current roadmaps only</small></article>
+      </section>
+      <section class="dash-section" aria-labelledby="studentsTitle">
+        <div class="dash-section-heading"><div><h2 id="studentsTitle">Your students.</h2><p>Open a student to review saved assessments, tasks, and feedback.</p></div><div class="dash-search"><label for="studentSearch" class="dash-inline-label">Search name or major</label><input id="studentSearch" type="search" placeholder="Search students..."></div></div>
+        <div class="dash-table-wrap"><table class="dash-table"><thead><tr><th scope="col">Student</th><th scope="col">Career target</th><th scope="col">Roadmap progress</th><th scope="col">Review</th></tr></thead><tbody id="studentRows"></tbody></table></div>
+      </section>
+      <section class="dash-section dash-selection" id="studentReview" aria-labelledby="reviewTitle" hidden>
+        <div class="dash-section-heading"><div><span class="dash-tag">STUDENT REVIEW</span><h2 id="reviewTitle">Student details</h2><p id="reviewMeta"></p></div><button type="button" class="dash-button" id="closeReview">Close review</button></div>
+        <p class="dash-status" id="reviewStatus" aria-live="polite"></p>
+        <div id="reviewContent" hidden>
+          <div class="dash-grid">
+            <div><h3>Saved assessments</h3><div id="studentAssessments"></div><h3>Current roadmap tasks</h3><ul id="reviewTasks" class="dash-task-list"></ul></div>
+            <div><h3>Share your guidance</h3><form id="feedbackForm">
+              <div class="dash-field"><label for="feedbackCareer">Career context</label><select id="feedbackCareer" name="career"></select></div>
+              <div class="dash-field"><label for="feedbackBody">Feedback</label><textarea id="feedbackBody" name="body" minlength="5" maxlength="3000" required placeholder="Suggest a next step, learning resource, or portfolio improvement..."></textarea><small class="dash-muted">5–3,000 characters. Your Student can read this feedback.</small></div>
+              <button type="submit" class="dash-button primary" id="sendFeedback">Send feedback →</button><p id="feedbackMessage" class="dash-status" aria-live="polite"></p>
+            </form><h3>Feedback history</h3><div id="reviewFeedback"></div></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="js/pages/supervisor-dashboard.js"></script>
+</body>
+</html>

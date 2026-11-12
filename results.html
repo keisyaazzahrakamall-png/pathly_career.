@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Skill Gap Results | Pathly</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/results.css">
+  <link rel="stylesheet" href="css/polish.css">
+  <link rel="stylesheet" href="css/visual-upgrade.css">
+  <link rel="stylesheet" href="css/session.css">
+</head>
+
+<body class="results-page">
+  <header class="navbar">
+    <div class="container navbar-content">
+      <a href="index.html" class="logo">Pathly<span>.</span></a>
+      <div class="navbar-tools">
+        <a href="assessment.html" class="back-link">← Review Assessment</a>
+        <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="results-main">
+    <div class="container results-container" id="resultsContainer">
+      <div class="results-heading">
+        <div class="results-heading-text">
+          <p class="section-label">YOUR SKILL GAPS</p>
+          <h1>Here is where you stand.</h1>
+          <p>
+            Pathly compares your skills with the requirements of your chosen career.
+          </p>
+        </div>
+
+        <div class="results-target">
+          <span>CAREER TARGET</span>
+          <strong id="resultCareerName">Loading...</strong>
+        </div>
+      </div>
+
+      <section class="alignment-card">
+        <div class="score-circle" id="scoreCircle">
+          <div class="score-content">
+            <strong id="alignmentScore">0%</strong>
+            <span>SKILL ALIGNMENT</span>
+          </div>
+        </div>
+
+        <div class="alignment-info">
+          <p class="section-label">CURRENT ALIGNMENT</p>
+          <h2 id="alignmentHeadline">Calculating results...</h2>
+          <p id="alignmentDescription">Comparing your skills with your target.</p>
+
+          <div class="alignment-progress">
+            <div class="alignment-progress-top">
+              <span>Requirements covered</span>
+              <span id="alignmentBarPercent">0%</span>
+            </div>
+
+            <div class="alignment-bar">
+              <div class="alignment-bar-value" id="alignmentBarValue"></div>
+            </div>
+          </div>
+
+          <div class="alignment-disclaimer">
+            This score shows skill coverage, not your chance of getting hired.
+          </div>
+        </div>
+      </section>
+
+      <div class="result-stats">
+        <div class="result-stat">
+          <span>DEVELOPED</span>
+          <strong id="developedCount">0</strong>
+        </div>
+
+        <div class="result-stat">
+          <span>DEVELOPING</span>
+          <strong id="developingCount">0</strong>
+        </div>
+
+        <div class="result-stat">
+          <span>MISSING</span>
+          <strong id="missingCount">0</strong>
+        </div>
+
+        <div class="result-stat">
+          <span>WITH REFERENCES</span>
+          <strong id="evidenceCount">0</strong>
+        </div>
+      </div>
+
+      <section class="result-section">
+        <div class="result-section-heading">
+          <p class="section-label">PRIORITY GAPS</p>
+          <h2>What should you prioritize?</h2>
+          <p>Priorities are based on skill weights and gap size.</p>
+        </div>
+
+        <div class="priority-grid" id="priorityGrid"></div>
+      </section>
+
+      <section class="result-section">
+        <div class="result-section-heading">
+          <p class="section-label">SKILL MAP</p>
+          <h2>Your skills at a glance.</h2>
+          <p>View the level, target, status, and references for each skill.</p>
+        </div>
+
+        <div class="skill-result-list" id="skillResultList"></div>
+
+        <div class="result-legend">
+          <div class="legend-item">
+            <span class="legend-dot legend-developed"></span>
+            Developed
+          </div>
+
+          <div class="legend-item">
+            <span class="legend-dot legend-developing"></span>
+            Developing
+          </div>
+
+          <div class="legend-item">
+            <span class="legend-dot legend-missing"></span>
+            Missing
+          </div>
+        </div>
+      </section>
+
+      <div class="results-bottom">
+        <a href="assessment.html" class="btn btn-secondary">
+          Review Assessment
+        </a>
+
+        <a href="readiness.html" class="btn btn-primary">
+          Continue to Readiness <span>→</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="js/pages/results.js"></script>
+</body>
+</html>
