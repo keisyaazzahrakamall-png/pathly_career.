@@ -2,7 +2,7 @@
 
 **Understand your skills, identify gaps, and build your career path.**
 
-A career-readiness web application for D3, D4, and bachelor's students, created by **VELORA for ITECHNO CUP 2026**. Pathly connects career exploration, self-assessment, skill-gap analysis, reflection, and a personal roadmap in one account.
+A career-readiness web application for D3, D4, and bachelor's students. Pathly connects career exploration, self-assessment, skill-gap analysis, reflection, and a personal roadmap in one account.
 
 - Existing live demo: https://pathly-velora.vercel.app/
 - Repository: https://github.com/keisyaazzahrakamall-png/PATHLY
@@ -216,4 +216,4 @@ See [privacy.html](privacy.html) for the in-app privacy summary. Use private sub
 
 ## License and team
 
-Copyright © 2026 Keisya Azzahra Kamal / VELORA. Created for the ITECHNO CUP 2026 Web Development submission. No open-source license has been granted; reuse requires the project owner's permission.
+Copyright © 2026 Keisya Azzahra Kamal. No open-source license has been granted; reuse requires the project owner's permission.
