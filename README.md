@@ -54,9 +54,9 @@ The app does not predict employment, diagnose psychological traits, or verify po
 
 | Role | Dashboard and permissions |
 | --- | --- |
-| Student | `student-dashboard.html`: continue the existing career journey, see progress, assigned Supervisor, and feedback. |
-| Supervisor | `supervisor-dashboard.html`: review assigned Students, assessments, references, roadmaps, task progress, and guidance history; send feedback. |
-| Admin | `admin-dashboard.html`: manage registered users' roles, assign or remove Supervisors, monitor progress, and read recent role changes. |
+| Student | `student-dashboard.html`: continue the existing career journey, see progress, assigned Supervisor, and feedback. | 
+| Supervisor | `supervisor-dashboard.html`: review assigned Students, assessments, references, roadmaps, task progress, and guidance history; send feedback. | supervisor: id: 92d75ea5 and email: attakhira.safiani@student.president.ac.id 
+| Admin | `admin-dashboard.html`: manage registered users' roles, assign or remove Supervisors, monitor progress, and read recent role changes. | admin: id: 635c155c and email: keisyaazzahrakamall@gmail.com 
 
 Sign-in opens the dashboard for the account's database role. Public signup
 always creates a Student. Role management uses guarded database functions;
