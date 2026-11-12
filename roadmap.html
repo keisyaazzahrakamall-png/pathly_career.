@@ -1,125 +1,336 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Career Roadmap | Pathly</title>
-
+  <title>Supervisor Dashboard | Pathly</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/roadmap.css">
-  <link rel="stylesheet" href="css/polish.css">
-  <link rel="stylesheet" href="css/visual-upgrade.css">
   <link rel="stylesheet" href="css/session.css">
+  <link rel="stylesheet" href="css/dashboards.css">
+
+  <style>
+    .report-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    #studentReport {
+      background: #fff;
+      color: #17233b;
+      border: 1px solid #dbe3ef;
+      border-radius: 16px;
+      padding: 28px;
+      margin-top: 22px;
+    }
+
+    #studentReport h1 {
+      font-size: 26px;
+      margin: 0 0 6px;
+    }
+
+    #studentReport .report-brand {
+      font-weight: 800;
+      color: #17233b;
+      font-size: 22px;
+      margin-bottom: 22px;
+    }
+
+    #studentReport .report-subtitle {
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+
+    #studentReport h2 {
+      font-size: 17px;
+      margin: 24px 0 10px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    #studentReport .report-meta {
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    #studentReport .report-assessment {
+      margin: 12px 0;
+      padding: 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      break-inside: avoid;
+    }
+
+    #studentReport .report-footer {
+      margin-top: 30px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 16mm;
+      }
+
+      body * {
+        visibility: hidden !important;
+      }
+
+      #studentReport,
+      #studentReport * {
+        visibility: visible !important;
+      }
+
+      #studentReport {
+        display: block !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+      }
+
+      #studentReport h1 {
+        font-size: 22pt;
+      }
+
+      #studentReport h2 {
+        break-after: avoid;
+      }
+
+      #studentReport .report-assessment,
+      #studentReport li {
+        break-inside: avoid;
+      }
+    }
+  </style>
 </head>
 
-<body class="roadmap-page">
+<body class="role-dashboard">
+
   <header class="navbar">
     <div class="container navbar-content">
       <a href="index.html" class="logo">Pathly<span>.</span></a>
-      <div class="navbar-tools">
-        <a href="readiness.html" class="back-link">← Readiness</a>
-        <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
-      </div>
+      <div class="nav-auth" data-auth-slot data-auth-context="internal"></div>
     </div>
   </header>
 
-  <main class="roadmap-main">
-    <div class="container roadmap-container">
-      <section class="roadmap-header">
-        <div class="roadmap-heading">
-          <p class="section-label">PERSONAL ROADMAP</p>
-          <h1>Turn your gaps into action.</h1>
-          <p>
-            Pathly turns priority gaps into structured development steps.
+  <main class="dash-container">
+
+    <p class="dash-status" id="dashboardStatus"
+       role="status" aria-live="polite">
+      Loading supervisor dashboard...
+    </p>
+
+    <div id="dashboardContent" hidden>
+
+      <header class="dash-header">
+        <div>
+          <span class="dash-tag">SUPERVISOR WORKSPACE</span>
+          <h1>Help the next step take shape.</h1>
+          <p>Review your assigned Students and share practical career guidance.</p>
+        </div>
+        <button type="button" class="dash-button" id="refreshDashboard">
+          Refresh data ↻
+        </button>
+      </header>
+
+      <section class="dash-stats" aria-label="Supervision overview">
+        <article class="dash-stat">
+          <span>Assigned students</span>
+          <strong id="supervisorStudents">0</strong>
+          <small>Managed by your Admin</small>
+        </article>
+
+        <article class="dash-stat">
+          <span>Active targets</span>
+          <strong id="supervisorTargets">0</strong>
+          <small>Students with a career target</small>
+        </article>
+
+        <article class="dash-stat">
+          <span>Active roadmaps</span>
+          <strong id="supervisorRoadmaps">0</strong>
+          <small>Students with a current roadmap</small>
+        </article>
+
+        <article class="dash-stat">
+          <span>Average progress</span>
+          <strong id="supervisorProgress">—</strong>
+          <small>Across current roadmaps only</small>
+        </article>
+      </section>
+
+      <section class="dash-section" aria-labelledby="studentsTitle">
+
+        <div class="dash-section-heading">
+          <div>
+            <h2 id="studentsTitle">Your students.</h2>
+            <p>Open a student to review saved assessments, tasks, and feedback.</p>
+          </div>
+
+          <div class="dash-search">
+            <label for="studentSearch" class="dash-inline-label">
+              Search name or major
+            </label>
+            <input id="studentSearch" type="search"
+                   placeholder="Search students...">
+          </div>
+        </div>
+
+        <div class="dash-table-wrap">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Career target</th>
+                <th>Roadmap progress</th>
+                <th>Review</th>
+              </tr>
+            </thead>
+            <tbody id="studentRows"></tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <section class="dash-section dash-selection"
+               id="studentReview"
+               aria-labelledby="reviewTitle"
+               hidden>
+
+        <div class="dash-section-heading">
+          <div>
+            <span class="dash-tag">STUDENT REVIEW</span>
+            <h2 id="reviewTitle">Student details</h2>
+            <p id="reviewMeta"></p>
+          </div>
+
+          <div class="report-actions">
+            <button type="button"
+                    class="dash-button primary"
+                    id="generateStudentReport">
+              Generate Report
+            </button>
+
+            <button type="button"
+                    class="dash-button"
+                    id="printStudentReport"
+                    hidden>
+              Print / Save as PDF
+            </button>
+
+            <button type="button"
+                    class="dash-button"
+                    id="closeReview">
+              Close review
+            </button>
+          </div>
+        </div>
+
+        <p class="dash-status" id="reviewStatus" aria-live="polite"></p>
+
+        <div id="reviewContent" hidden>
+
+          <div class="dash-grid">
+
+            <div>
+              <h3>Saved assessments</h3>
+              <div id="studentAssessments"></div>
+
+              <h3>Current roadmap tasks</h3>
+              <ul id="reviewTasks" class="dash-task-list"></ul>
+            </div>
+
+            <div>
+              <h3>Share your guidance</h3>
+
+              <form id="feedbackForm">
+
+                <div class="dash-field">
+                  <label for="feedbackCareer">Career context</label>
+                  <select id="feedbackCareer" name="career"></select>
+                </div>
+
+                <div class="dash-field">
+                  <label for="feedbackBody">Feedback</label>
+                  <textarea id="feedbackBody"
+                            name="body"
+                            minlength="5"
+                            maxlength="3000"
+                            required
+                            placeholder="Suggest a next step, learning resource, or portfolio improvement..."></textarea>
+                  <small class="dash-muted">
+                    5–3,000 characters. Your Student can read this feedback.
+                  </small>
+                </div>
+
+                <button type="submit"
+                        class="dash-button primary"
+                        id="sendFeedback">
+                  Send feedback →
+                </button>
+
+                <p id="feedbackMessage"
+                   class="dash-status"
+                   aria-live="polite"></p>
+              </form>
+
+              <h3>Feedback history</h3>
+              <div id="reviewFeedback"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PDF REPORT -->
+        <section id="studentReport"
+                 hidden
+                 aria-label="Student progress report">
+
+          <div class="report-brand">
+            Pathly<span style="color:#0d9488">.</span>
+          </div>
+
+          <h1>Student Progress Report</h1>
+
+          <p class="report-subtitle">
+            Supervisor-generated career development report
           </p>
-        </div>
 
-        <div class="roadmap-target">
-          <span>CAREER TARGET</span>
-          <strong id="roadmapCareer">Loading...</strong>
-        </div>
+          <div class="report-meta" id="reportStudentInfo"></div>
+
+          <h2>Saved Assessments</h2>
+          <div id="reportAssessments"></div>
+
+          <h2>Career Roadmap Progress</h2>
+          <div id="reportTasks"></div>
+
+          <h2>Supervisor Feedback</h2>
+          <div id="reportFeedback"></div>
+
+          <div class="report-footer">
+            Generated from Pathly Career ·
+            <span id="reportGeneratedDate"></span>
+          </div>
+
+        </section>
+
       </section>
-
-      <section class="roadmap-overview">
-        <div class="roadmap-stat">
-          <span>CURRENT ALIGNMENT</span>
-          <strong id="roadmapAlignment">-</strong>
-        </div>
-
-        <div class="roadmap-stat">
-          <span>PRIORITIES</span>
-          <strong id="roadmapPriorityCount">-</strong>
-        </div>
-
-        <div class="roadmap-stat">
-          <span>ROADMAP PACE</span>
-          <strong id="roadmapPace">-</strong>
-        </div>
-
-        <div class="roadmap-stat">
-          <span>PROFILE</span>
-          <strong id="roadmapProfile">-</strong>
-        </div>
-      </section>
-
-      <section class="next-action-card">
-        <div>
-          <p class="section-label">START HERE</p>
-          <span class="next-action-skill">NEXT PRIORITY</span>
-          <h2 id="nextActionTitle">Loading next action...</h2>
-          <p id="nextActionDescription">Preparing your roadmap.</p>
-        </div>
-
-        <div class="next-action-badge">
-          <span>STEP</span>
-          <strong>01</strong>
-        </div>
-      </section>
-
-      <section class="roadmap-intro">
-        <p class="section-label">YOUR DEVELOPMENT PATH</p>
-        <h2>Learn. Apply. Prove.</h2>
-        <p>
-          Understand the skill, put it into practice, then demonstrate your ability.
-        </p>
-        <p>
-          Initial activity estimates reflect your assessed skill level. The overall roadmap pace adjusts to your semester. These estimates are not the time required to master an entire skill.
-        </p>
-      </section>
-
-      <section class="roadmap-list" id="roadmapList"></section>
-
-      <section class="evidence-booster" id="evidenceBooster">
-        <div>
-          <p class="section-label">PORTFOLIO COVERAGE</p>
-          <h2>Record the work you already have.</h2>
-          <p id="evidenceBoosterText">Counting your recorded references.</p>
-        </div>
-      </section>
-
-      <div class="roadmap-note">
-        <strong>
-          This roadmap is a guide, not a guarantee of employment.
-        </strong>
-
-        <p>
-          Priorities are based on your assessment responses and the career requirements mapped by Pathly.
-        </p>
-      </div>
-
-      <div class="roadmap-actions">
-        <a href="readiness.html" class="btn btn-secondary">
-          Back to Readiness
-        </a>
-
-        <a href="my-path.html" class="btn btn-primary">
-          Open My Path <span>→</span>
-        </a>
-      </div>
     </div>
   </main>
 
-  <script type="module" src="js/pages/roadmap.js"></script>
+  <script type="module"
+          src="js/pages/supervisor-dashboard.js"></script>
+
 </body>
 </html>
