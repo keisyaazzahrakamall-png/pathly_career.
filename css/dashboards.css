@@ -76,3 +76,102 @@
   .dash-stat strong { font-size: 27px; }
   .dash-search { width: 100%; }
 }
+
+/* ======================================
+   STUDENT PROGRESS REPORT
+====================================== */
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.student-report {
+  margin-top: 24px;
+  padding: 32px;
+  background: #ffffff;
+  color: #222222;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.report-header {
+  text-align: center;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.report-header h2 {
+  margin: 12px 0 6px;
+}
+
+.report-section {
+  margin-bottom: 28px;
+  break-inside: avoid;
+}
+
+.report-section h3 {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.report-assessment {
+  margin: 16px 0;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  break-inside: avoid;
+}
+
+.report-footer {
+  padding-top: 20px;
+  margin-top: 28px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 18mm;
+  }
+
+  body {
+    background: #ffffff !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #studentReport,
+  #studentReport * {
+    visibility: visible !important;
+  }
+
+  #studentReport {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    color: #000000;
+  }
+
+  .report-section,
+  .report-assessment {
+    break-inside: avoid;
+  }
+
+  .report-header,
+  .report-section h3 {
+    break-after: avoid;
+  }
+}
